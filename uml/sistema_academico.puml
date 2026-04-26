@@ -1,0 +1,141 @@
+@startuml Sistema_Academico
+
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam classBackgroundColor #FAFAFA
+skinparam classBorderColor #555555
+skinparam arrowColor #333333
+skinparam linetype ortho
+
+' -- Enumeraciones --
+enum TipoBeca {
+    EXCELENCIA
+    SOCIOECONOMICA
+    DEPORTIVA
+}
+
+enum EstadoPago {
+    PENDIENTE
+    PAGADO
+    VENCIDO
+}
+
+' -- Clase abstracta --
+abstract class Persona {
+    # _rut : str
+    # _nombre : str
+    # _apellido : str
+    # _fecha_nacimiento : date
+    + rut : str <<property>>
+    + nombre_completo : str <<property>>
+    + {abstract} mostrar_resumen() : void
+}
+
+' -- Derivadas --
+class Estudiante {
+    - _codigo : str
+    - _carrera : str
+    - _inscripciones : list
+    - _pagos : list
+    + beca : Beca
+    + carrera : str <<property>>
+    + codigo : str <<property>>
+    + agregar_inscripcion(insc) : void
+    + obtener_inscripciones() : list
+    + agregar_pago(pago) : void
+    + obtener_pagos() : list
+    + mostrar_resumen() : void
+}
+
+class Docente {
+    - _depto : str
+    + secciones : list
+    + asignar_seccion(seccion) : void
+    + mostrar_resumen() : void
+}
+
+' -- Beca --
+class Beca {
+    + tipo : TipoBeca
+    - _porcentaje : float
+    + inicio : date
+    + fin : date
+    + porcentaje : float <<property>>
+    + es_valida() : bool
+}
+
+' -- Financiero --
+class Arancel {
+    - _monto_base : float
+    + vencimiento : date
+    + monto_base : float <<property>>
+    + calcular_monto(beca) : float
+}
+
+class Pago {
+    - _estudiante : Estudiante
+    - _arancel : Arancel
+    - _estado : EstadoPago
+    - _fecha_pago : date
+    + monto : float <<property>>
+    + estado : EstadoPago <<property>>
+    + pagar() : void
+    + verificar_vencimiento() : void
+    + mostrar_detalle() : void
+}
+
+' -- Academico --
+class Asignatura {
+    + codigo : str
+    + nombre : str
+}
+
+class Horario {
+    + dia : str
+    + inicio : int
+    + fin : int
+    + hay_choque(otro) : bool
+    + __str__() : str
+}
+
+class Seccion {
+    + codigo : str
+    + asignatura : Asignatura
+    + horario : Horario
+    + docente : Docente
+    - _inscripciones : list
+    + obtener_inscripciones() : list
+    + inscribir(estudiante) : void
+    + mostrar_lista() : void
+}
+
+class Inscripcion {
+    + estudiante : Estudiante
+    + seccion : Seccion
+    - _notas : list
+    - _examen : float
+    + agregar_nota(n) : void
+    + registrar_examen(n) : void
+    + final() : float
+    + estado() : str
+    + mostrar_notas() : void
+}
+
+' -- Relaciones --
+Persona <|-- Estudiante
+Persona <|-- Docente
+
+Seccion --> "1" Asignatura
+Seccion --> "1" Horario
+Seccion o-- "0..1" Docente
+
+Estudiante "1" --> "0..1" Beca
+Beca --> TipoBeca
+Pago --> EstadoPago
+Pago --> "1" Arancel
+Pago --> "1" Estudiante
+
+Estudiante "1" -- "0..*" Inscripcion
+Seccion "1" -- "0..*" Inscripcion
+
+@enduml
