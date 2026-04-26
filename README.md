@@ -3,13 +3,13 @@ Sistema de consola en Python para gestionar estudiantes, docentes, inscripciones
 Lenguaje y tecnologias
 Python 3.10+
 PlantUML para el diagrama de clases
-Estructura
+Estructura;
 
-main.py   # Codigo fuente principal,
-diagrama.puml          # Diagrama UML
- diagrama.png           # Imagen del diagrama
-  README.md
-Como ejecutar
+main.py,
+diagrama.puml,       L
+ diagrama.png,          
+README.md
+
 
 ### Por Terminal (Recomendado)
 
@@ -24,9 +24,9 @@ python main.py
 ```
 
 **En Windows (PowerShell o CMD):**
-```powershell
+powershell:
 python main.py
-```
+
 
 **En macOS o Linux (Terminal):**
 ```bash
