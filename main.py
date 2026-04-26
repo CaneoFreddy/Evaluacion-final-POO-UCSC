@@ -5,7 +5,7 @@ from enum import Enum
 
 class TipoBeca(Enum):
     EXCELENCIA = "Excelencia"
-    SOCIOECONOMICA = "Socioeconómica"
+    SOCIOECONOMICA = "Socioeconomica"
     DEPORTIVA = "Deportiva"
 
 
@@ -222,7 +222,7 @@ class Inscripcion:
         print(f"  Notas: {self._notas} | Examen: {self._examen} | Final: {self.final()} | {self.estado()}")
 
 
-# ---------- DATOS ----------
+# ---------- DATOS ------------------------
 
 def poblar():
     ests = [
@@ -231,14 +231,14 @@ def poblar():
     ]
 
     docs = [
-        Docente("9-9", "Pablo", "Lastra", date(1980, 5, 10), "Computación"),
-        Docente("8-7", "Jesus", "Pacheco", date(1975, 3, 22), "Matemáticas")
+        Docente("9-9", "Pablo", "Lastra", date(1980, 5, 10), "Computacion"),
+        Docente("8-7", "Jesus", "Pacheco", date(1975, 3, 22), "Matematicas")
     ]
 
     secs = [
-        Seccion("S1", Asignatura("POO", "Programación OO"), Horario("Lunes", 10, 12)),
+        Seccion("S1", Asignatura("POO", "Programacion OO"), Horario("Lunes", 10, 12)),
         Seccion("S2", Asignatura("BD", "Base de Datos"), Horario("Lunes", 13, 15)),
-        Seccion("S3", Asignatura("MAT", "Matemáticas"), Horario("Martes", 9, 11))
+        Seccion("S3", Asignatura("MAT", "Matematicas"), Horario("Martes", 9, 11))
     ]
 
     beca_mat = Beca(TipoBeca.EXCELENCIA, 50, date(2025, 1, 1), date(2026, 12, 31))

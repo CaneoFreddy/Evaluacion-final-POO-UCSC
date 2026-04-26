@@ -1,15 +1,22 @@
 Sistema de Gestion Academica
 Sistema de consola en Python para gestionar estudiantes, docentes, inscripciones, calificaciones y pagos de una universidad.
 Lenguaje y tecnologias
-Python 3.10+
+Python 3.10+(abc, datetime, enum)
 PlantUML para el diagrama de clases
-Estructura;
-
+Estructura; 
+,
 main.py,
-diagrama.puml,       L
- diagrama.png,          
 README.md
+ diagrama.png,  
+diagrama.puml,       
+        
 
+# 1. Clonar el repositorio
+git clone origin https://github.com/CaneoFreddy/Evaluacion-final-POO-UCSC.git
+cd Evaluacion-final-POO-UCSC
+
+# 2. Ejecutar el sistema
+python Evaluacion-final-POO-UCSC.py
 
 ### Por Terminal (Recomendado)
 
@@ -23,15 +30,12 @@ cd "ruta/a/tu/carpeta/Evaluación Sumativa Final-Freddy Caneo"
 python main.py
 ```
 
-**En Windows (PowerShell o CMD):**
+* (PowerShell o CMD):*
 powershell:
 python main.py
 
 
-**En macOS o Linux (Terminal):**
-```bash
-python3 main.py
-```
+
 
 Al ejecutar, se muestra un menú interactivo en la consola para navegar entre las opciones.
 
