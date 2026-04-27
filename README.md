@@ -1,73 +1,83 @@
-Sistema de Gestion Academica
+# Sistema de Gestion Academica
+
 Sistema de consola en Python para gestionar estudiantes, docentes, inscripciones, calificaciones y pagos de una universidad.
-Lenguaje y tecnologias
-Python 3.10+(abc, datetime, enum)
-PlantUML para el diagrama de clases
-Estructura; 
-,
-main.py,
-README.md
- diagrama.png,  
-diagrama.puml,       
-        
 
-# 1. Clonar el repositorio
-git clone origin https://github.com/CaneoFreddy/Evaluacion-final-POO-UCSC.git
+## Lenguaje y tecnologias
+
+- Python 3.10+ (abc, datetime, enum)
+- PlantUML para el diagrama de clases
+
+## Estructura
+
+```
+.
+├── main.py
+├── README.md
+├── sistema_academico.png
+└── sistema_academico.puml
+```
+
+## Instalacion
+
+```bash
+git clone https://github.com/CaneoFreddy/Evaluacion-final-POO-UCSC.git
 cd Evaluacion-final-POO-UCSC
+```
 
-# 2. Ejecutar el sistema
-python Evaluacion-final-POO-UCSC.py
+## Como ejecutar
 
 ### Por Terminal (Recomendado)
 
-Requisito: tener Python 3.10 o superior instalado.
-
 ```bash
-# 1. Navegar a la carpeta del proyecto
-cd "ruta/a/tu/carpeta/Evaluación Sumativa Final-Freddy Caneo"
-
-# 2. Ejecutar el sistema
 python main.py
 ```
 
-* (PowerShell o CMD):*
-powershell:
+**En Windows (PowerShell o CMD):**
+```powershell
 python main.py
+```
 
+**En macOS o Linux:**
+```bash
+python3 main.py
+```
 
+Al ejecutar, se muestra un menu interactivo en la consola para navegar entre las opciones.
 
+## Con Visual Studio Code (Opcional)
 
-Al ejecutar, se muestra un menú interactivo en la consola para navegar entre las opciones.
+### Extensiones recomendadas
 
-### Con Visual Studio Code (Opcional)
+1. **Python** (Microsoft) - `ms-python.python`
+   - Ejecuta y depura codigo Python
 
-Si usas Visual Studio Code, instala estas extensiones recomendadas:
-
-1. **Python** (Microsoft)
-   - Ejecuta y depura código Python
-  
-
-2. **PlantUML** (jebbs)
+2. **PlantUML** (jebbs) - `jebbs.plantuml`
    - Visualiza el diagrama de clases (.puml)
+   - Atajo: `Ctrl + Shift + P` → render PlantUML
 
-3. **Markdown All in One** (Yu Zhang) - Opcional
-   - Mejora la edición del README
+3. **Markdown All in One** (Yu Zhang) - `yzhang.markdown-all-in-one` (Opcional)
+   - Mejora la edicion del README
 
+### Ejecutar en VSCode
 
-**Para ejecutar en VSCode:**
 - Abre `main.py` → Click derecho → "Run Python File in Terminal"
 - O presiona `Ctrl + F5` (Windows) / `Cmd + F5` (Mac)
-- Ctrl + shift + p : para descargar imagen de plantuml
 
-Funcionalidades:
-Lista de estudiantes y docentes
-Inscribir el respectivo estudiante en su debida seccion
-Registrar notas parciales y examen
-Calcular nota final y estado (aprobado/eprobado)
-Gestionar pagos de arancel con descuento por beca
-Consultar horarios por seccion
+## Funcionalidades
+
+- Listar estudiantes y docentes
+- Inscribir estudiante en seccion pero valida los choques de horario
+- Registrar notas parciales y el examen
+- Calcular la nota final y el estado si esta aprobado o reprobado
+- Gestionar pagos del arancel pero si tiene beca le descuenta
+- Consultar horarios por seccion
+
+## Notas
+
+- El sistema es una simulacion basica pensada para consola
+- En un futuro se podria mejorar con interfaz visual con tkinker o web con flask y django pero por el tiempo y los requerimientos de la evualuacion no se experimento con estos frameworks
 
 ## Diagrama de clases
 
-![Diagrama UML del Sistema Académico](sistema_academico.png)
+![Diagrama UML del Sistema Academico](sistema_academico.png)
 
